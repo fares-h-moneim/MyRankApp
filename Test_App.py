@@ -30,23 +30,23 @@ def btn_clicked():
         if array[count][0] == x:
             check = True
             if count == 11 or count == 12 or count == 13:
-                result.config(text = f'Congratulations you are the {count}th!')
+                canvas.itemconfig(result, text = f'Congratulations you are the {count}th!')
             elif count%10 == 1:
-                result.config(text = f'Congratulations you are the {count}st!')
+                canvas.itemconfig(result, text = f'Congratulations you are the {count}st!')
             elif count%10 == 2:
-                result.config(text = f'Congratulations you are the {count}nd!')
+                canvas.itemconfig(result, text = f'Congratulations you are the {count}nd!')
             elif count%10 == 3:
-                result.config(text = f'Congratulations you are the {count}rd!')
+                canvas.itemconfig(result, text = f'Congratulations you are the {count}rd!')
             else:
-                result.config(text = f'Congratulations you are the {count}th!')
+                canvas.itemconfig(result, text = f'Congratulations you are the {count}th!')
             break;
         count += 1
     if check == False:
-        result.config(text = "Please Fill the Form and Try Again")
+        canvas.itemconfig(result, text = "Please Fill the Form and Try Again")
     count_c = wks.get('D2')
     count_e = wks.get('D3')
-    track_c.config(text = f'Track C (Computer) = {count_c[0][0]}')
-    track_e.config(text = f'Track E (Communication) = {count_e[0][0]}')
+    canvas.itemconfig(track_c, text = f'Track C (Computer) = {count_c[0][0]}')
+    canvas.itemconfig(track_e, text = f'Track E (Communication) = {count_e[0][0]}')
 
 canvas = Canvas(
     window,
@@ -64,8 +64,30 @@ background = canvas.create_image(
     image=background_img)
 
 canvas.create_text(
-    694.0, 270.0,
-    text = "GPA",
+    750.0, 250.0,
+    text = "Enter your GPA (/4.00)",
+    fill = "#415973",
+    font = ("KellySlab-Regular", int(24.0)))
+
+entry0_img = PhotoImage(file = f"img_textBox0.png")
+entry0_bg = canvas.create_image(
+    694.0, 312.0,
+    image = entry0_img)
+
+result = canvas.create_text(
+    750.0, 400.0,
+    text = "",
+    fill = "#415973",
+    font = ("KellySlab-Regular", int(24.0)))
+
+track_c = canvas.create_text(
+    750.0, 500.0,
+    text = "Statistics will Load",
+    fill = "#415973",
+    font = ("KellySlab-Regular", int(24.0))) 
+track_e = canvas.create_text(
+    752.0, 550.0,
+    text = "when you Submit...",
     fill = "#415973",
     font = ("KellySlab-Regular", int(24.0)))
 
@@ -75,12 +97,10 @@ entry0_bg = canvas.create_image(
     image = entry0_img)
 
 entry0 = Entry(window, textvariable = gpa_var, bd = 0, bg = "#ffffff", highlightthickness = 0)
-result = Label(window, text = "", font = ("KellySlab-Regular", int(24.0)), bg = '#82DFFF')
-track_c = Label(window, text = "Statistics will Load", font = ("KellySlab-Regular", int(24.0)), bg = '#82DFFF')
-track_e = Label(window, text = "when you Submit...", font = ("KellySlab-Regular", int(24.0)), bg = '#82DFFF')
-result.place(x = 500.0, y = 400)
-track_c.place(x = 500.0, y = 500)
-track_e.place(x=500.0, y = 550)
+#track_c = Label(window, text = "Statistics will Load", font = ("KellySlab-Regular", int(24.0)), bg = '#82DFFF')
+#track_e = Label(window, text = "when you Submit...", font = ("KellySlab-Regular", int(24.0)), bg = '#82DFFF')
+#track_c.place(x = 500.0, y = 500)
+#track_e.place(x=500.0, y = 550)
 entry0.place(
     x = 561.0, y = 289,
     width = 266.0,
