@@ -3,7 +3,7 @@
 A simple app using python to find students' ranks using their GPA as input with GUI using tkinter python library and accessing google sheet using gspread library from a googlr form
 
 
-## Software Required to Run the Game:
+## Software Required to Run the App:
 
 For this project you will only need to have [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/) or [pycharm](https://www.jetbrains.com/pycharm/download/#section=windows).
 
