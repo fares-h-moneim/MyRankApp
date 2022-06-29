@@ -1,4 +1,4 @@
-# My Rank App (with GUI)
+# My Rank App 
 
 A simple app using python to find students' ranks using their GPA as input with GUI using tkinter python library and accessing google sheet using gspread library from a googlr form
 
